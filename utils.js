@@ -77,13 +77,7 @@ async function checkResultAndReturnUrl(
 
 export async function openBrowserAsync(
   url: string,
-  options?: InAppBrowserOptions = {
-    animated: true,
-    modalEnabled: true,
-    dismissButtonStyle: 'close',
-    readerMode: false,
-    enableBarCollapsing: false
-  }
+  options?: InAppBrowserOptions
 ): Promise<BrowserResult> {
   return RNInAppBrowser.open({
     ...options,
@@ -100,9 +94,7 @@ export async function openBrowserAsync(
 export async function openAuthSessionAsync(
   url: string,
   redirectUrl: string,
-  options?: InAppBrowserOptions = {
-    ephemeralWebSession: false
-  }
+  options?: InAppBrowserOptions
 ): Promise<AuthSessionResult> {
   return RNInAppBrowser.openAuth(
     url,
